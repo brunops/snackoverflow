@@ -8,11 +8,9 @@
 #     end
 
 #     context "assuming we put a form on that page" do
-
 #       xit 'we can then post to create and log in' do
 #         post :create, legit_params
 #       end
 #     end
 #   end
-
 # end

@@ -8,17 +8,19 @@ class QuestionsController < ApplicationController
 		redirect_to root_path
 	end
 
+	def show
+		@question = Question.find(params[:id])
+	end
+
 	def index
 		@questions = Question.all
 		render :index
 	end
 
-	def show
-	end
-
 	private
 
-	 def question_params
-    params.require(:question).permit(:body)
-  end
+	def question_params
+		params.require(:question).permit(:body)
+	end
+
 end
