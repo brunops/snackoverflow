@@ -6,6 +6,6 @@ feature "Questions index (home) page" do
   scenario "shows question on home page" do
     question
     visit root_path
-    expect(page).to have_content question.body
+    expect(page).to have_content question.title
   end
 end
