@@ -12,15 +12,13 @@ class QuestionsController < ApplicationController
 		@question = Question.find(params[:id])
 	end
 
-	def index
-		@questions = Question.all
-		render :index
-	end
+  def index
+    @questions = Question.order('created_at DESC')
+  end
 
 	private
 
 	def question_params
 		params.require(:question).permit(:body, :title)
 	end
-
 end
