@@ -20,7 +20,7 @@ class QuestionsController < ApplicationController
 	private
 
 	def question_params
-		params.require(:question).permit(:body)
+		params.require(:question).permit(:body, :title)
 	end
 
 end
