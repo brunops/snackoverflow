@@ -37,10 +37,10 @@ group :doc do
   gem 'sdoc', require: false
 end
 
-
 group :test, :development do
+  gem 'faker'
   gem 'rspec-rails', '~> 2.0'
-  gem 'shoulda'
+  gem 'shoulda-matchers'
   gem 'dotenv'
   gem 'capybara'
 end
