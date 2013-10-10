@@ -40,7 +40,7 @@ end
 
 group :test, :development do
   gem 'rspec-rails', '~> 2.0'
-  gem 'shoulda'
+  gem 'shoulda-matchers'
   gem 'dotenv'
   gem 'capybara'
 end

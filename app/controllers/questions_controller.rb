@@ -1,11 +1,12 @@
 class QuestionsController < ApplicationController
 	def new
+		@question = Question.new
 	end
-	
-	def create(params)
-		Question.new(params)
-		Question.save
-	end 
+
+	def create
+		Question.create(question_params)
+		redirect_to root_path
+	end
 
 	def index
 		@questions = Question.all
@@ -13,5 +14,11 @@ class QuestionsController < ApplicationController
 	end
 
 	def show
-	end 
-end	
+	end
+
+	private
+
+	 def question_params
+    params.require(:question).permit(:body)
+  end
+end
