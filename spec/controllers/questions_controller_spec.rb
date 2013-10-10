@@ -20,5 +20,14 @@ describe QuestionsController do
     end
   end
 
+  context "GET #show" do
+    let (:new_question) {FactoryGirl.create(:question_with_answers)}
+    it "should list associated comments" do
+      get :show, id: new_question.id
+      expect(assigns(:answers).count).to eq(new_question.answers.count)
+    end
+
+  end
+
 
 end
