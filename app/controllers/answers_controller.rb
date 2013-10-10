@@ -1,14 +1,13 @@
 class AnswersController < ApplicationController
 
   def create
-    Answer.create(answer_params)
+    @answer = Answer.create(answer_params)
+    redirect_to question_path(@answer.question)
   end
-
-
 
   private
 
   def answer_params
-    params.require(:answer).permit(:body)
+    params.require(:answer).permit(:body, :question_id)
   end
 end

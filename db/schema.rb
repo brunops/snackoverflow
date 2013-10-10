@@ -18,9 +18,9 @@ ActiveRecord::Schema.define(version: 20131010213219) do
 
   create_table "answers", force: true do |t|
     t.string   "body"
+    t.integer  "question_id"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "question_id"
   end
 
   create_table "questions", force: true do |t|
