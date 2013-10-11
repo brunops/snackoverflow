@@ -1,5 +1,8 @@
 Snackoverflow::Application.routes.draw do
-  resources :questions, :answers
+
+  resources :questions
+  resources :users
+  resources :answers
   root to: 'questions#index'
 
   # The priority is based upon order of creation: first created -> highest priority.
