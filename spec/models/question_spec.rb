@@ -15,9 +15,9 @@ describe Question do
   end
 
   it "should belong to the user who created it" do
-    @user = User.create(fb_username: "sunny", email: "s@dbc.com")
-    @question = @user.questions.create(valid_params)
-    expect(@question.user).to eq(@user)
+    user = FactoryGirl.create(:user)
+    question = user.questions.create(valid_params)
+    expect(question.user).to eq(user)
   end
 
   it {should have_many(:answers)}
