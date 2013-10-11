@@ -19,4 +19,6 @@ describe Question do
     question = user.questions.create(valid_params)
     expect(question.user).to eq(user)
   end
+
+  it {should have_many(:answers)}
 end

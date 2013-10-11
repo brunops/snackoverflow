@@ -1,1 +1,5 @@
-<%= @question.body %>
+<p><%= @question.body %></p>
+<% @answers.each do |answer| %>
+  <p><%= answer.body %></p>
+<% end %>
+<%= render 'answers/answer_form' %>
